@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://openlayers.org/en/v5.3.0/css/ol.css" type="text/css">
+    <script src="https://openlayers.org/en/v5.3.0/build/ol.js"></script>
+</head>
+<body>
+    <div id="allmap" class="allmap"></div>
+</body>
+<script>
+    //对应源代码中的投影
+    var projection = ol.proj.get('EPSG:3857')
+    //对应源代码中的源信息
+    var origin = [-2.0037508342787E7, 2.0037508342787E7]
+    //对应源代码中的全图范围信息
+    var fullExtent = [ 1.3453229952271476E7,3591518.690105271,1.3578020635878595E7, 3745753.867415652]
+    //对应源代码中的切片方案信息
+    var resolutions = [156543.03392800014, 78271.51696399994, 39135.75848200009, 19567.87924099992, 
+     9783.93962049996,  4891.96981024998,2445.98490512499, 1222.992452562495,611.4962262813797,305.74811314055756,152.87405657041106,76.43702828507324,
+    38.21851414253662,19.10925707126831,9.554628535634155,4.77731426794937, 2.388657133974685, 1.1943285668550503,0.5971642835598172,0.29858214164761665,
+    0.14929107082380833,0.07464553541190416,0.03732276770595208,0.01866138385297604]
+    var tileGrid = new ol.tilegrid.TileGrid({
+        tileSize: 256,
+        origin: origin,
+        extent: fullExtent,
+        resolutions: resolutions
+    })
+    //url是本地的geowebcache的地址
+    //params中 Layers是对应的服务名称，format是图片格式，SRS是地图的坐标系
+    //view中中心坐标填写，上述查看的中心坐标
+    //view的resolution填写切片方案数组中的其中一个数字。
+    var map = new ol.Map({
+        target: 'allmap',
+        layers: [new ol.layer.Tile({
+            source: new ol.source.TileWMS({
+                url: "http://localhost:8080/geowebcache/service/wms",
+                params: {'LAYERS': 'towncompact', format: 'image/png', SRS: 'EPSG:3857'},
+                tileGrid: tileGrid
+            })
+        })],
+        view: new ol.View({
+            center: [13519132,3663233],
+            resolutions: resolutions,
+            resolution:  152.87405657041106,
+            projection: projection,
+            extent: fullExtent
+        })
+    })
+</script>
+</html>

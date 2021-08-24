@@ -1,0 +1,3069 @@
+$mapbodywidth: 100%;
+$mapbodyheight: 100%;
+$mapnavbarheight: 100px;
+
+$arcgis_widget_button_size: 45px;
+$arcgis_widget_font_size: 18px;
+$arcgis_widget_icon_size: 19px;
+
+$arcgis_widget_margin: 15px;
+$arcgis_widget_full_width: 100%;
+
+$Calcite_Gray_350_Dark: #5c5c5c;
+$Calcite_Gray_450_Dark: #787878;
+$Calcite_Gray_700_Dark: #d1d1d1;
+$Calcite_Gray_400_Dark: #666666;
+$theme_dark_control_text_color_hover: #ffffff;
+$theme_dark_control_text_color: #242424;
+$Calcite_Gray_300: #4c4c4c;
+$Calcite_Gray_100: #333333;
+$Calcite_Gray_200: #404040;
+$Calcite_Gray_700: #d1d1d1;
+// Widget light color variables
+$theme_light_arcgis_widget_bg: rgba(58, 95, 225, 1);
+$theme_light_arcgis_widget_bg1: rgba(58, 95, 225, 0.1);
+$theme_light_arcgis_widget_bg2: rgba(58, 95, 225, 0.2);
+$theme_light_arcgis_widget_bg3: rgba(58, 95, 225, 0.3);
+$theme_light_arcgis_widget_bg4: rgba(58, 95, 225, 0.4);
+$theme_light_arcgis_widget_bg5: rgba(58, 95, 225, 0.5);
+$theme_light_arcgis_widget_bg6: rgba(58, 95, 225, 0.6);
+$theme_light_arcgis_widget_bg7: rgba(58, 95, 225, 0.7);
+$theme_light_arcgis_widget_bg8: rgba(58, 95, 225, 0.8);
+$theme_light_arcgis_widget_bg9: rgba(58, 95, 225, 0.9);
+$theme_light_arcgis_widget_color: rgba(255, 255, 255, 1);
+$theme_light_arcgis_widget_border: rgba(58, 95, 225, 1);
+$theme_light_arcgis_widget_border1: rgba(243, 247, 250, 0.1);
+$theme_light_arcgis_widget_border2: rgba(243, 247, 250, 0.2);
+$theme_light_arcgis_active_background: rgba(82, 118, 216, 1);
+$theme_light_arcgis_active_text_color: rgba(0, 0, 0, 1);
+$theme_light_arcgis_popup_content_color1: rgba(255, 255, 255, 1);
+$theme_light_arcgis_popup_content_color2: rgba(247, 247, 247, 1);
+$theme_light_arcgis_popup_header_color: rgba(255, 255, 255, 1);
+$theme_light_nagigator_warning_color: rgba(252, 145, 30, 1);
+
+$theme_light_arcgis_widget_search_bottom_border: rgba(255, 255, 255, 0.2);
+
+$theme_light_arcgis_widget_shadow: rgba(55, 55, 55, 0.5);
+$theme_light_arcgis_disabled_text_color: $Calcite_Gray_350_Dark;
+$theme_light_arcgis_placholder: $Calcite_Gray_450_Dark;
+
+// Widget dark color variables
+$theme_dark_arcgis_widget_bg: rgba(0, 0, 0, 1);
+$theme_dark_arcgis_widget_bg1: rgba(0, 0, 0, 0.1);
+$theme_dark_arcgis_widget_bg2: rgba(0, 0, 0, 0.2);
+$theme_dark_arcgis_widget_bg3: rgba(0, 0, 0, 0.3);
+$theme_dark_arcgis_widget_bg4: rgba(0, 0, 0, 0.4);
+$theme_dark_arcgis_widget_bg5: rgba(0, 0, 0, 0.5);
+$theme_dark_arcgis_widget_bg6: rgba(0, 0, 0, 0.6);
+$theme_dark_arcgis_widget_bg7: rgba(0, 0, 0, 0.7);
+$theme_dark_arcgis_widget_bg8: rgba(0, 0, 0, 0.8);
+$theme-dark-arcgis-widget-bg9: rgba(0, 0, 0, 0.9);
+$theme_dark_arcgis_widget_color: rgba(255, 255, 255, 1);
+$theme_dark_arcgis_widget_border: rgba(82, 118, 216, 1); //rgba(82, 93, 123, 1);
+$theme_dark_arcgis_widget_border1: rgba(82, 93, 123, 0.1);
+$theme_dark_arcgis_widget_border2: rgba(82, 93, 123, 0.2);
+$theme_dark_arcgis_active_background: rgba(32, 136, 245, 1);
+$theme_dark_arcgis_active_text_color: rgba(255, 255, 255, 1);
+$theme_dark_arcgis_popup_content_color1: rgba(15, 21, 39, 0.1);
+$theme_dark_arcgis_popup_content_color2: rgba(0, 0, 0, 0.5);
+$theme_dark_arcgis_popup_header_color: rgba(36, 65, 122, 1);
+$theme_dark_nagigator_warning_color: rgba(252, 145, 30, 1);
+
+$theme_dark_arcgis_widget_search_bottom_border: rgba(82, 118, 216, 1);
+
+$theme_dark_arcgis_widget_shadow: rgba(55, 55, 55, 0.5);
+$theme_dark_arcgis_disabled_text_color: $Calcite_Gray_350_Dark;
+$theme_dark_arcgis_placholder: $Calcite_Gray_450_Dark;
+
+.theme-default {
+  .el-autocomplete-suggestion {
+    background-color: $theme_light_arcgis_widget_bg;
+
+    .el-scrollbar__view.el-autocomplete-suggestion__list {
+      color: white;
+
+      li {
+        color: white;
+      }
+    }
+  }
+  .mapscreen {
+    height: $mapbodyheight;
+    width: $mapbodywidth;
+    background-image: require('../../../assets/bookmark/earth.png');
+    background-size: 100% 100%;
+    color: #fff;
+
+    #container {
+      position: absolute;
+    }
+
+    .maploading {
+      position: absolute;
+      margin-top: 20%;
+      margin-left: 50%;
+    }
+
+    .slideout-panel {
+      .slideout-panel-bg {
+        background-color: transparent !important;
+
+        .slideout {
+          background-color: transparent !important;
+        }
+      }
+    }
+
+    .calcite-map {
+      width: $mapbodywidth;
+      height: $mapbodyheight;
+
+      .esri-widget {
+        border: 0px solid rgba(32, 136, 245, 1);
+        // background-color: rgba(32, 136, 245, 1);
+
+        .esri-widget--button,
+        &.esri-widget--button {
+          width: $arcgis_widget_button_size;
+          height: $arcgis_widget_button_size;
+          font-size: $arcgis_widget_font_size;
+        }
+
+        [class*="esri-icon"],
+        [role="button"] [class*="esri-icon"] {
+          font-size: $arcgis_widget_icon_size;
+        }
+
+        &.esri-compass {
+          .esri-compass__icon {
+            font-size: $arcgis_widget_font_size + 5;
+          }
+        }
+      }
+
+      .esri-attribution {
+        display: none;
+      }
+
+      .esri-ui-bottom-left,
+      .esri-ui-bottom-right {
+        flex-flow: column nowrap;
+      }
+
+      .esri-ui-bottom-left .esri-widget.esri-component,
+      .esri-ui-bottom-right .esri-widget.esri-component {
+        margin-top: 0px;
+      }
+
+      .esri-ui-top-left,
+      .esri-ui-top-right {
+        flex-flow: column nowrap;
+      }
+
+      .esri-ui-top-left .esri-component,
+      .esri-ui-top-right .esri-component {
+        margin-right: 0px;
+        margin-top: 0px;
+      }
+
+      .esri-ui .esri-popup {
+        z-index: 3;
+
+        .esri-popup__main-container {
+          .esri-popup__content::-webkit-scrollbar {
+            display: none;
+          }
+
+          .esri-popup__content {
+            // overflow-y: hidden;
+            // overflow-x: hidden;
+            margin-top: -5px;
+            margin-left: 5px;
+            margin-right: 5px;
+            margin-bottom: 2px;
+          }
+        }
+      }
+
+      &.esri-view-width-xlarge {
+        .esri-popup__main-container {
+          width: 600px;
+
+          .popupframe {
+            height: 600px;
+            width: 100%;
+            border: none;
+          }
+        }
+      }
+
+      &.esri-view-height-medium {
+        .esri-popup__main-container {
+          max-height: 400px;
+        }
+      }
+
+      &.esri-view-width-large {
+        .esri-popup__main-container {
+          width: 500px;
+
+          .popupframe {
+            height: 600px;
+            width: 100%;
+            border: none;
+          }
+        }
+      }
+
+      &.esri-view-height-less-than-medium {
+        .esri-popup__main-container {
+          max-height: 400px;
+        }
+      }
+
+      &.esri-view-width-medium {
+        .esri-popup__main-container {
+          width: 400px;
+
+          .popupframe {
+            height: 400px;
+            width: 100%;
+            border: none;
+          }
+        }
+      }
+
+      .esri-popup.esri-widget {
+        max-height: 100%;
+      }
+
+      .esri-popup__header {
+        h1 {
+          margin: 0;
+        }
+
+        .esri-popup__button {
+          padding: 12px 7px 10px;
+        }
+      }
+
+      .esri-popup .esri-popup-collapsed {
+
+        .esri-popup__content,
+        .esri-popup__footer {
+          display: none;
+        }
+
+        .esri-widget h1 {
+          margin: 0;
+        }
+      }
+
+      &.calcite-widgets-light {
+        .esri-widget.esri-abovebelowswitch,
+        .esri-widget.esri-areameasurement,
+        .esri-widget.esri-disatancemeasurement,
+        .esri-widget.esri-basemapswitch,
+        .esri-widget.esri-buildingSencelayerFilter,
+        .esri-widget.esri-mapsceneviewswitch,
+        //二三维切换控件，点击按钮实现切换，不等拖拽实现二三维切换
+        .esri-widget.esri-measurementtool,
+        .esri-widget.esri-bmapgallery,
+        .esri-widget.esri-bookmark-gallery .esri-widget.esri-mapsencethemeSettings,
+        .esri-widget.esri-addresslocation-search,
+        .esri-widget.esri-mapsenceswitch,
+        .esri-widget.esri-fullscreen,
+        .esri-widget.esri-direct-line-measurement-3d,
+        .esri-widget.esri-area-measurement-3d,
+        .esri-widget.esri-area-measurement-2d,
+        .esri-widget.esri-distance-measurement-2d,
+        .esri-widget.esri-togglecustomlayerlist,
+        .esri-widget.esri-mapgraphicsclear,
+        .esri-widget.esri-weather,
+        .esri-widget.esri-expand,
+        .esri-widget.esri-layer-list,
+        .esri-widget.esri-home,
+        .esri-widget.esri-zoom,
+        .esri-widget.esri-compass,
+        .esri-widget.esri-locate,
+        .esri-widget.esri-track,
+        .esri-navigation-toggle.esri-widget,
+        // 3d
+        // .esri-popup .esri-widget,
+        .esri-widget .esri-menu,
+        .esri-search.esri-widget,
+        .esri-search .esri-search__input,
+        .esri-navigation-toggle {
+          background-color: $theme_light_arcgis_widget_bg;
+          color: $theme_light_arcgis_widget_color;
+
+          .esri-widget--button {
+            background-color: $theme_light_arcgis_widget_bg;
+            color: $theme_light_arcgis_widget_color;
+          }
+
+          &.esri-widget--button:not(.esri-search__submit-button):active,
+          &.esri-widget--button:not(.esri-search__submit-button):hover,
+          .esri-widget--button:not(.esri-search__submit-button):active,
+          .esri-widget--button:not(.esri-search__submit-button):hover {
+            background-color: $theme_light_arcgis_active_background !important;
+            color: $theme_light_arcgis_active_text_color !important;
+          }
+
+          .esri-widget--button.esri-disabled {
+            color: $theme_light_arcgis_widget_color;
+          }
+        }
+
+        .esri-widget.esri-areameasurement {
+
+          // border-radius: 50%;
+          &.active {
+            color: red;
+          }
+        }
+
+        .esri-widget.esri-togglecustomlayerlist {
+          &.active {
+            color: red;
+          }
+        }
+
+        .esri-widget.esri-disatancemeasurement {
+
+          // border-radius: 50%;
+          &.active {
+            color: red;
+          }
+        }
+         .esri-widget.esri-weather {
+           &.active {
+             color: red;
+           }
+         }
+
+        //图片样式未使用，使用的是icon 字体样式
+        .esri-widget.esri-basemapswitch {
+          &.esri-basemap-dark {
+            background-image: url(/mapapi/images/light/mapType_as.jpg);
+          }
+
+          &.esri-basemap-light {
+            background-image: url(/mapapi/images/light/mapType_zw.jpg);
+          }
+
+          &.esri-basemap-imagery {
+            background-image: url(/mapapi/images/light/mapType_img.jpg);
+          }
+        }
+
+        .esri-widget.esri-buildingSencelayerFilter {
+          width: 300px;
+          height: 480px;
+          max-height: 800px;
+          display: flex;
+          flex-flow: column;
+
+          .esri-buildingSencelayerFilter_filterheader {
+            background-color: $theme_light_arcgis_widget_bg;
+            color: $theme_light_arcgis_widget_color;
+            margin-top: 10px;
+            text-align: center;
+            height: 0px;
+            font-size: 20px;
+          }
+
+          .esri-buildingSencelayerFilter_slider {
+            background-color: $theme_light_arcgis_widget_bg;
+            color: $theme_light_arcgis_widget_color;
+            overflow: auto;
+            height: 320px;
+            max-height: 640px;
+            margin-top: 10px;
+
+            .esri-slider__track {
+              background-color: $theme_light_arcgis_widget_color;
+            }
+
+            &::-webkit-scrollbar {
+              width: 10px !important;
+              height: 1px !important;
+            }
+
+            &::-webkit-scrollbar-thumb {
+              border-radius: 10px;
+              -webkit-box-shadow: inset 0 0 10px $theme_light_arcgis_widget_color !important;
+              box-shadow: inset 0 0 10px $theme_light_arcgis_widget_color !important;
+              background: $theme_light_arcgis_widget_bg !important;
+            }
+
+            &::-webkit-scrollbar-track {
+              -webkit-box-shadow: inset 0 0 5px $theme_light_arcgis_widget_color !important;
+              box-shadow: inset 0 0 5px $theme_light_arcgis_widget_color !important;
+              border-radius: 10px !important;
+              background: $theme_light_arcgis_widget_bg !important;
+            }
+
+            .esri-slider__tick-label {
+              font-size: 14px;
+            }
+
+            .esri-slider__content {
+              &::-webkit-scrollbar {
+                width: 10px !important;
+                height: 1px !important;
+              }
+
+              &::-webkit-scrollbar-thumb {
+                border-radius: 10px;
+                -webkit-box-shadow: inset 0 0 10px $theme_light_arcgis_widget_color !important;
+                box-shadow: inset 0 0 10px $theme_light_arcgis_widget_color !important;
+                background: $theme_light_arcgis_widget_bg !important;
+              }
+
+              &::-webkit-scrollbar-track {
+                -webkit-box-shadow: inset 0 0 5px $theme_light_arcgis_widget_color !important;
+                box-shadow: inset 0 0 5px $theme_light_arcgis_widget_color !important;
+                border-radius: 10px !important;
+                background: $theme_light_arcgis_widget_bg !important;
+              }
+            }
+          }
+
+          .esri-buildingSencelayerFilter_model {
+            margin-top: 10px;
+            height: 0px;
+            font-size: 20px;
+            text-align: center;
+            background-color: $theme_light_arcgis_widget_bg;
+            color: $theme_light_arcgis_widget_color;
+
+            input[type="radio"] {
+              margin-right: 5px;
+            }
+
+            label {
+              margin-right: 10px;
+            }
+          }
+
+          .esri-buildingSencelayerFilter_btn {
+            background-color: $theme_light_arcgis_widget_bg;
+            color: $theme_light_arcgis_widget_color;
+            height: 30px;
+            width: 100px;
+            margin-top: 30px;
+            margin-left: 100px;
+          }
+        }
+
+        .esri-widget.esri-measurementtool>div {
+          &.active {
+            background-color: $theme_light_arcgis_active_background;
+          }
+        }
+
+        .esri-widget.esri-area-measurement-3d {
+          .esri-area-measurement-3d__measurement {
+            background-color: $theme_light_arcgis_widget_bg;
+            color: $theme_light_arcgis_widget_color;
+          }
+        }
+
+        .esri-widget.esri-direct-line-measurement-3d {
+          .esri-direct-line-measurement-3d__measurement {
+            background-color: $theme_light_arcgis_widget_bg;
+            color: $theme_light_arcgis_widget_color;
+          }
+        }
+
+        .esri-widget.esri-area-measurement-2d {
+          .esri-area-measurement-2d__measurement {
+            background-color: $theme_dark_arcgis_widget_bg;
+            color: $theme_light_arcgis_widget_color;
+          }
+        }
+
+        .esri-widget.esri-distance-measurement-2d {
+          .esri-distance-measurement-2d__measurement {
+            background-color: $theme_light_arcgis_widget_bg;
+            color: $theme_light_arcgis_widget_color;
+          }
+        }
+
+        .esri-widget.esri-expand {
+          .esri-expand__container {
+            .esri-expand__content {
+              ::-webkit-scrollbar {
+                width: 10px !important;
+                height: 1px !important;
+              }
+
+              ::-webkit-scrollbar-thumb {
+                border-radius: 10px;
+                -webkit-box-shadow: inset 0 0 10px $theme_light_arcgis_widget_color !important;
+                box-shadow: inset 0 0 10px $theme_light_arcgis_widget_color !important;
+                background: $theme_light_arcgis_widget_bg !important;
+              }
+
+              ::-webkit-scrollbar-track {
+                -webkit-box-shadow: inset 0 0 5px $theme_light_arcgis_widget_color !important;
+                box-shadow: inset 0 0 5px $theme_light_arcgis_widget_color !important;
+                border-radius: 10px !important;
+                background: $theme_light_arcgis_widget_bg !important;
+              }
+            }
+          }
+        }
+
+        .esri-widget.esri-layer-list {
+          .esri-layer-list__item {
+            background-color: $theme_light_arcgis_widget_bg;
+            color: $theme_light_arcgis_widget_color;
+
+            .esri-layer-list__item-container {
+              background-color: $theme_light_arcgis_widget_bg;
+              color: $theme_light_arcgis_widget_color;
+
+              .esri-layer-list__child-toggle {
+                color: $theme_light_arcgis_widget_color;
+              }
+
+              .esri-layer-list__item-label {
+                .esri-layer-list__item-toggle {
+                  color: $theme_light_arcgis_widget_color;
+                }
+              }
+
+              .esri-layer-list__item-actions-menu {
+                color: $theme_light_arcgis_widget_color;
+
+                .esri-layer-list__item-actions-menu-item {
+                  color: $theme_light_arcgis_widget_color;
+                }
+              }
+            }
+
+            .esri-layer-list__item-actions {
+              background-color: $Calcite_Gray_400_Dark;
+              color: $theme_light_arcgis_widget_color;
+            }
+          }
+        }
+
+        .esri-widget.esri-bmapgallery {
+          width: 914px;
+          height: 100px;
+          display: flex;
+          flex-flow: row;
+          // background-image: url(/mapapi/images/light/basemap_bg.png);
+          // background-color: transparent !important;
+
+          .esri-bmapgallery-bg {
+            background-color: $theme_light_arcgis_widget_bg;
+            color: $theme_dark_arcgis_widget_color;
+            margin-left: 15px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            display: flex;
+            flex-flow: row;
+
+            .esri-bmapgallery-image {
+              margin: 10px;
+              width: 80px;
+              height: 60px;
+              color: $theme_light_arcgis_widget_color;
+              border: 0px;
+              background-image: url(/mapapi/images/light/i_image.png);
+              background-repeat: round;
+
+              &.active {
+                background-image: url(/mapapi/images/light/i_image_active.png);
+                background-repeat: round;
+              }
+
+              >span {
+                //  font-size: 10px;
+                color: $theme_dark_arcgis_widget_color;
+
+                &.mapName {
+                  float: right;
+                  position: relative;
+                  bottom: -42px;
+                }
+              }
+            }
+
+            .esri-bmapgallery-street {
+              margin: 10px;
+              width: 80px;
+              height: 60px;
+              color: $theme_dark_arcgis_widget_color;
+              border: 0px;
+              background-image: url(/mapapi/images/light/i_street.png);
+              background-repeat: round;
+
+              &.active {
+                background-image: url(/mapapi/images/light/i_street_active.png);
+                background-repeat: round;
+              }
+
+              >span {
+                // font-size: 10px;
+                color: $theme_dark_arcgis_widget_color;
+
+                &.mapName {
+                  float: right;
+                  position: relative;
+                  bottom: -42px;
+                }
+              }
+            }
+
+            .esri-bmapgallery-lightgray {
+              margin: 10px;
+              width: 80px;
+              height: 60px;
+              color: $theme_dark_arcgis_widget_color;
+              border: 0px;
+              background-image: url(/mapapi/images/light/i_lightgray.png);
+              background-repeat: round;
+
+              &.active {
+                background-image: url(/mapapi/images/light/i_lightgray_active.png);
+                background-repeat: round;
+              }
+
+              >span {
+                // font-size: 10px;
+                color: $theme_dark_arcgis_widget_color;
+
+                &.mapName {
+                  float: right;
+                  position: relative;
+                  bottom: -42px;
+                }
+              }
+            }
+
+            .esri-bmapgallery-darkgray {
+              margin: 10px;
+              width: 80px;
+              height: 60px;
+              color: $theme_dark_arcgis_widget_color;
+              border: 0px;
+              background-image: url(/mapapi/images/light/i_darkgray.png);
+              background-repeat: round;
+
+              &.active {
+                background-image: url(/mapapi/images/light/i_darkgray_active.png);
+                background-repeat: round;
+              }
+
+              >span {
+                // font-size: 10px;
+                color: $theme_dark_arcgis_widget_color;
+
+                &.mapName {
+                  float: right;
+                  position: relative;
+                  bottom: -42px;
+                }
+              }
+            }
+
+            .esri-bmapgallery-shadedrelief {
+              margin: 10px;
+              width: 80px;
+              height: 60px;
+              color: $theme_dark_arcgis_widget_color;
+              border: 0px;
+              background-image: url(/mapapi/images/light/i_shadedrelief.png);
+              background-repeat: round;
+
+              &.active {
+                background-image: url(/mapapi/images/light/i_shadedrelief_active.png);
+                background-repeat: round;
+              }
+
+              >span {
+                // font-size: 10px;
+                color: $theme_dark_arcgis_widget_color;
+
+                &.mapName {
+                  float: right;
+                  position: relative;
+                  bottom: -42px;
+                }
+              }
+            }
+
+            .esri-bmapgallery-natgeo {
+              margin: 10px;
+              width: 80px;
+              height: 60px;
+              color: $theme_dark_arcgis_widget_color;
+              border: 0px;
+              background-image: url(/mapapi/images/light/i_natgeo.png);
+              background-repeat: round;
+
+              &.active {
+                background-image: url(/mapapi/images/light/i_natgeo_active.png);
+                background-repeat: round;
+              }
+
+              >span {
+                // font-size: 10px;
+                color: $theme_dark_arcgis_widget_color;
+
+                &.mapName {
+                  float: right;
+                  position: relative;
+                  bottom: -42px;
+                }
+              }
+            }
+
+            .esri-bmapgallery-physical {
+              margin: 10px;
+              width: 80px;
+              height: 60px;
+              color: $theme_dark_arcgis_widget_color;
+              border: 0px;
+              background-image: url(/mapapi/images/light/i_physical.png);
+              background-repeat: round;
+
+              &.active {
+                background-image: url(/mapapi/images/light/i_physical_active.png);
+                background-repeat: round;
+              }
+
+              >span {
+                // font-size: 10px;
+                color: $theme_dark_arcgis_widget_color;
+
+                &.mapName {
+                  float: right;
+                  position: relative;
+                  bottom: -42px;
+                }
+              }
+            }
+
+            .esri-bmapgallery-topmap {
+              margin: 10px;
+              width: 80px;
+              height: 60px;
+              color: $theme_dark_arcgis_widget_color;
+              border: 0px;
+              background-image: url(/mapapi/images/light/i_topmap.png);
+              background-repeat: round;
+
+              &.active {
+                background-image: url(/mapapi/images/light/i_topmap_active.png);
+                background-repeat: round;
+              }
+
+              >span {
+                // font-size: 10px;
+                color: $theme_dark_arcgis_widget_color;
+
+                &.mapName {
+                  float: right;
+                  position: relative;
+                  bottom: -42px;
+                }
+              }
+            }
+
+            .esri-bmapgallery-switch-underground {
+              position: absolute;
+              bottom: 15px;
+              right: 10px;
+              display: flex;
+              flex-flow: row;
+
+              &.invisible {
+                display: none;
+              }
+
+              .esri-bmapgallery-switch-underground-checkbox {
+                float: left;
+                position: relative;
+                font-size: 100px;
+                width: 42px;
+                height: 20px;
+                border-radius: 30px;
+                border: none;
+                outline: none;
+                -webkit-appearance: none;
+                transition: all 0.2s ease;
+                border: 0.2px #296098 solid;
+                background-color: $Calcite_Gray_300;
+              }
+
+              .esri-bmapgallery-switch-underground-checkbox::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 50%;
+                height: 100%;
+                border-radius: 50%;
+                transition: all 0.2s ease;
+                background-color: $Calcite_Gray_100;
+              }
+
+              .esri-bmapgallery-switch-underground-checkbox:checked::after {
+                left: 50%;
+              }
+
+              .esri-bmapgallery-switch-underground-checkbox:checked {
+                background-color: $Calcite_Gray_300;
+                border: 0.2px $Calcite_Gray_200 solid;
+              }
+
+              .esri-bmapgallery-switch-underground-h4 {
+                color: $Calcite_Gray_700;
+                margin-top: 6px;
+                margin-left: 5px;
+                margin-right: 5px;
+              }
+            }
+
+            .active {
+              box-shadow: 1px 0px 10px $Calcite_Gray_300 inset;
+              border: 0.1px $Calcite_Gray_200 solid;
+            }
+          }
+        }
+
+        .esri-widget.esri-bookmark-gallery {
+          &.hide{
+              display: none;
+            }
+          background-color: $theme_light_arcgis_widget_bg;
+          display: flex;
+          flex-flow: row nowrap;
+
+          .esri-bookmark-gallery-bg {
+            margin-left: 15px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            background-color: $theme_light_arcgis_widget_bg1;
+            color: $theme_light_arcgis_widget_color;
+            display: flex;
+            flex-flow: row;
+
+            .esri-bookmark-item {
+              margin: 10px;
+              width: 80px;
+              height: 80px;
+              color: $theme_light_arcgis_widget_color;
+              border: 0px;
+
+              .esri-bookmark-item-rect {
+                border: solid 1px $theme_light_arcgis_widget_color;
+
+                &.hightlight {
+                  border: solid 2px red;
+                }
+
+                .bookmarkimage {
+                  height: auto;
+                  max-width: 100%;
+                  max-height: 100%;
+                  vertical-align: bottom;
+                  bottom: 0;
+                  -o-object-fit: fill;
+                  object-fit: fill;
+                }
+
+                >span {
+                  color: $theme_light_arcgis_widget_color;
+
+                  &.mapName {
+                    float: right;
+                    position: relative;
+                    margin-right: 5px;
+                    bottom: 20px;
+                  }
+                }
+              }
+
+            }
+          }
+        }
+
+        .esri-widget.esri-bmapgallery-expand {
+          // width: 494px;
+          // height: 100px;
+          // background-image: url(/mapapi/images/light/basemap_bg.png);
+          // background-color: transparent !important;
+          //  -moz-background-size: 100% 100%;
+          //  background-size: 100% 100%;
+          // border: solid 10px red;
+          background-color: $theme_light_arcgis_widget_bg;
+          display: flex;
+          flex-flow: row nowrap;
+
+          .esri-bmapgallery-expand-bg {
+            display: none;
+            margin-left: 15px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            background-color: $theme_light_arcgis_widget_bg1;
+            color: $theme_light_arcgis_widget_color;
+            display: flex;
+            flex-flow: row;
+
+            &.invisible {
+              display: none;
+            }
+
+            .esri-bmapgallery-expand-image {
+              margin: 10px;
+              width: 80px;
+              height: 60px;
+              color: $theme_light_arcgis_widget_color;
+              border: 0px;
+              background-image: url(/mapapi/images/light/i_image.png);
+              background-repeat: round;
+
+              &.active {
+                background-image: url(/mapapi/images/light/i_image_active.png);
+                background-repeat: round;
+              }
+
+              >span {
+                // font-size: 10px;
+                color: $theme_light_arcgis_widget_color;
+
+                &.mapName {
+                  float: right;
+                  position: relative;
+                  margin-right: 5px;
+                  bottom: -42px;
+                }
+              }
+            }
+
+            .esri-bmapgallery-expand-street {
+              margin: 10px;
+              width: 80px;
+              height: 60px;
+              color: $theme_light_arcgis_widget_color;
+              border: 0px;
+              background-image: url(/mapapi/images/light/i_street.png);
+              background-repeat: round;
+
+              &.active {
+                background-image: url(/mapapi/images/light/i_street_active.png);
+                background-repeat: round;
+              }
+
+              >span {
+                //  font-size: 10px;
+                color: $theme_light_arcgis_widget_color;
+
+                &.mapName {
+                  float: right;
+                  position: relative;
+                  margin-right: 5px;
+                  bottom: -42px;
+                }
+              }
+            }
+
+            .esri-bmapgallery-expand-lightgray {
+              margin: 10px;
+              width: 80px;
+              height: 60px;
+              color: $theme_light_arcgis_widget_color;
+              border: 0px;
+              background-image: url(/mapapi/images/light/i_lightgray.png);
+              background-repeat: round;
+
+              &.active {
+                background-image: url(/mapapi/images/light/i_lightgray_active.png);
+                background-repeat: round;
+              }
+
+              >span {
+                // font-size: 10px;
+                color: $theme_light_arcgis_widget_color;
+
+                &.mapName {
+                  float: right;
+                  position: relative;
+                  margin-right: 5px;
+                  bottom: -42px;
+                }
+              }
+            }
+
+            .esri-bmapgallery-expand-darkgray {
+              margin: 10px;
+              width: 80px;
+              height: 60px;
+              color: $theme_light_arcgis_widget_color;
+              border: 0px;
+              background-image: url(/mapapi/images/light/i_darkgray.png);
+              background-repeat: round;
+
+              &.active {
+                background-image: url(/mapapi/images/light/i_darkgray_active.png);
+                background-repeat: round;
+              }
+
+              >span {
+                // font-size: 10px;
+                color: $theme_light_arcgis_widget_color;
+
+                &.mapName {
+                  float: right;
+                  position: relative;
+                  margin-right: 5px;
+                  bottom: -42px;
+                }
+              }
+            }
+
+            .esri-bmapgallery-expand-natgeo {
+              margin: 10px;
+              width: 80px;
+              height: 60px;
+              color: $theme_light_arcgis_widget_color;
+              border: 0px;
+              background-image: url(/mapapi/images/light/i_natgeo.png);
+              background-repeat: round;
+
+              &.active {
+                background-image: url(/mapapi/images/light/i_natgeo_active.png);
+                background-repeat: round;
+              }
+
+              >span {
+                // font-size: 10px;
+                color: $theme_light_arcgis_widget_color;
+
+                &.mapName {
+                  float: right;
+                  position: relative;
+                  margin-right: 5px;
+                  bottom: -42px;
+                }
+              }
+            }
+
+            .esri-bmapgallery-expand-physical {
+              margin: 10px;
+              width: 80px;
+              height: 60px;
+              color: $theme_light_arcgis_widget_color;
+              border: 0px;
+              background-image: url(/mapapi/images/light/i_physical.png);
+              background-repeat: round;
+
+              &.active {
+                background-image: url(/mapapi/images/light/i_physical_active.png);
+                background-repeat: round;
+              }
+
+              >span {
+                // font-size: 10px;
+                color: $theme_light_arcgis_widget_color;
+
+                &.mapName {
+                  float: right;
+                  position: relative;
+                  margin-right: 5px;
+                  bottom: -42px;
+                }
+              }
+            }
+
+            .esri-bmapgallery-expand-topmap {
+              margin: 10px;
+              width: 80px;
+              height: 60px;
+              color: $theme_light_arcgis_widget_color;
+              border: 0px;
+              background-image: url(/mapapi/images/light/i_topmap.png);
+              background-repeat: round;
+
+              &.active {
+                background-image: url(/mapapi/images/light/i_topmap_active.png);
+                background-repeat: round;
+              }
+
+              >span {
+                // font-size: 10px;
+                color: $theme_light_arcgis_widget_color;
+
+                &.mapName {
+                  float: right;
+                  position: relative;
+                  margin-right: 5px;
+                  bottom: -42px;
+                }
+              }
+            }
+
+            .esri-bmapgallery-expand-shadedrelief {
+              margin: 10px;
+              width: 80px;
+              height: 60px;
+              color: $theme_light_arcgis_widget_color;
+              border: 0px;
+              background-image: url(/mapapi/images/light/i_shadedrelief.png);
+              background-repeat: round;
+
+              &.active {
+                background-image: url(/mapapi/images/light/i_shadedrelief_active.png);
+                background-repeat: round;
+              }
+
+              >span {
+                // font-size: 10px;
+                color: $theme_light_arcgis_widget_color;
+
+                &.mapName {
+                  float: right;
+                  position: relative;
+                  margin-right: 5px;
+                  bottom: -42px;
+                }
+              }
+            }
+
+            .esri-bmapgallery-expand-switch-underground {
+              // position: absolute;
+              bottom: 15px;
+              right: 10px;
+              display: flex;
+              flex-flow: row;
+
+              &.invisible {
+                display: none;
+              }
+
+              .esri-bmapgallery-expand-switch-underground-checkbox {
+                float: left;
+                position: relative;
+                font-size: 100px;
+                width: 32px;
+                margin-top: 25px;
+                height: 20px;
+                border-radius: 30px;
+                border: none;
+                outline: none;
+                -webkit-appearance: none;
+                transition: all 0.2s ease;
+                border: 0.2px #296098 solid;
+                background-color: $Calcite_Gray_300;
+              }
+
+              .esri-bmapgallery-expand-switch-underground-checkbox::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 50%;
+                height: 100%;
+                border-radius: 50%;
+                transition: all 0.2s ease;
+                background-color: $Calcite_Gray_100;
+              }
+
+              .esri-bmapgallery-expand-switch-underground-checkbox:checked::after {
+                left: 50%;
+              }
+
+              .esri-bmapgallery-expand-switch-underground-checkbox:checked {
+                background-color: $Calcite_Gray_300;
+                border: 0.2px $Calcite_Gray_200 solid;
+              }
+
+              .esri-bmapgallery-expand-switch-underground-h4 {
+                color: $Calcite_Gray_700;
+              }
+
+              .esri-bmapgallery-expand-switch-underground-h4 {
+                margin-top: 25px;
+                margin-left: 5px;
+                margin-right: 5px;
+              }
+            }
+
+            .active {
+              box-shadow: 1px 0px 10px $Calcite_Gray_300 inset;
+              border: 0.1px $Calcite_Gray_200 solid;
+            }
+          }
+
+          .esri-bmapgallery-expand-display {
+            &.esri-bmapgallery-expand-boundary {
+              margin: 20px;
+              width: 80px;
+              height: 60px;
+              color: $theme_dark_arcgis_widget_color;
+              border: 0px;
+              background-image: url(/mapapi/images/light/i_boundary.png);
+              background-repeat: round;
+
+              &.active {
+                background-image: url(/mapapi/images/light/i_boundary_active.png);
+                background-repeat: round;
+              }
+
+              >span {
+                // font-size: 10px;
+                color: $theme_dark_arcgis_widget_color;
+
+                &.mapName {
+                  float: right;
+                  position: relative;
+                  margin-right: 5px;
+                  bottom: -42px;
+                }
+              }
+            }
+
+            &.esri-bmapgallery-expand-image {
+              margin: 20px;
+              width: 80px;
+              height: 60px;
+              color: $theme_dark_arcgis_widget_color;
+              border: 0px;
+              background-image: url(/mapapi/images/light/i_image.png);
+              background-repeat: round;
+
+              &.active {
+                background-image: url(/mapapi/images/light/i_image_active.png);
+                background-repeat: round;
+              }
+
+              >span {
+                // font-size: 10px;
+                color: $theme_dark_arcgis_widget_color;
+
+                &.mapName {
+                  float: right;
+                  position: relative;
+                  margin-right: 5px;
+                  bottom: -42px;
+                }
+              }
+            }
+
+            &.esri-bmapgallery-expand-street {
+              margin: 20px;
+              width: 80px;
+              height: 60px;
+              color: $theme_dark_arcgis_widget_color;
+              border: 0px;
+              background-image: url(/mapapi/images/light/i_street.png);
+              background-repeat: round;
+
+              &.active {
+                background-image: url(/mapapi/images/light/i_street_active.png);
+                background-repeat: round;
+              }
+
+              >span {
+                //  font-size: 10px;
+                color: $theme_dark_arcgis_widget_color;
+
+                &.mapName {
+                  float: right;
+                  position: relative;
+                  margin-right: 5px;
+                  bottom: -42px;
+                }
+              }
+            }
+
+            &.esri-bmapgallery-expand-lightgray {
+              margin: 20px;
+              width: 80px;
+              height: 60px;
+              color: $theme_dark_arcgis_widget_color;
+              border: 0px;
+              background-image: url(/mapapi/images/light/i_lightgray.png);
+              background-repeat: round;
+
+              &.active {
+                background-image: url(/mapapi/images/light/i_lightgray_active.png);
+                background-repeat: round;
+              }
+
+              >span {
+                // font-size: 10px;
+                color: $theme_dark_arcgis_widget_color;
+
+                &.mapName {
+                  float: right;
+                  position: relative;
+                  margin-right: 5px;
+                  bottom: -42px;
+                }
+              }
+            }
+
+            &.esri-bmapgallery-expand-shadedrelief {
+              margin: 20px;
+              width: 80px;
+              height: 60px;
+              color: $theme_dark_arcgis_widget_color;
+              border: 0px;
+              background-image: url(/mapapi/images/light/i_shadedrelief.png);
+              background-repeat: round;
+
+              &.active {
+                background-image: url(/mapapi/images/light/i_shadedrelief_active.png);
+                background-repeat: round;
+              }
+
+              >span {
+                // font-size: 10px;
+                color: $theme_dark_arcgis_widget_color;
+
+                &.mapName {
+                  float: right;
+                  position: relative;
+                  margin-right: 5px;
+                  bottom: -42px;
+                }
+              }
+            }
+
+            &.esri-bmapgallery-expand-darkgray {
+              margin: 20px;
+              width: 80px;
+              height: 60px;
+              color: $theme_dark_arcgis_widget_color;
+              border: 0px;
+              background-image: url(/mapapi/images/light/i_darkgray.png);
+              background-repeat: round;
+
+              &.active {
+                background-image: url(/mapapi/images/light/i_darkgray_active.png);
+                background-repeat: round;
+              }
+
+              >span {
+                // font-size: 10px;
+                color: $theme_dark_arcgis_widget_color;
+
+                &.mapName {
+                  float: right;
+                  position: relative;
+                  margin-right: 5px;
+                  bottom: -42px;
+                }
+              }
+            }
+
+            &.esri-bmapgallery-expand-natgeo {
+              margin: 20px;
+              width: 80px;
+              height: 60px;
+              color: $theme_dark_arcgis_widget_color;
+              border: 0px;
+              background-image: url(/mapapi/images/light/i_natgeo.png);
+              background-repeat: round;
+
+              &.active {
+                background-image: url(/mapapi/images/light/i_natgeo_active.png);
+                background-repeat: round;
+              }
+
+              >span {
+                // font-size: 10px;
+                color: $theme_dark_arcgis_widget_color;
+
+                &.mapName {
+                  float: right;
+                  position: relative;
+                  margin-right: 5px;
+                  bottom: -42px;
+                }
+              }
+            }
+
+            &.esri-bmapgallery-expand-physical {
+              margin: 20px;
+              width: 80px;
+              height: 60px;
+              color: $theme_dark_arcgis_widget_color;
+              border: 0px;
+              background-image: url(/mapapi/images/light/i_physical.png);
+              background-repeat: round;
+
+              &.active {
+                background-image: url(/mapapi/images/light/i_physical_active.png);
+                background-repeat: round;
+              }
+
+              >span {
+                // font-size: 10px;
+                color: $theme_dark_arcgis_widget_color;
+
+                &.mapName {
+                  float: right;
+                  position: relative;
+                  margin-right: 5px;
+                  bottom: -42px;
+                }
+              }
+            }
+
+            &.esri-bmapgallery-expand-topmap {
+              margin: 20px;
+              width: 80px;
+              height: 60px;
+              color: $theme_dark_arcgis_widget_color;
+              border: 0px;
+              background-image: url(/mapapi/images/light/i_topmap.png);
+              background-repeat: round;
+
+              &.active {
+                background-image: url(/mapapi/images/light/i_topmap_active.png);
+                background-repeat: round;
+              }
+
+              >span {
+                // font-size: 10px;
+                color: $theme_dark_arcgis_widget_color;
+
+                &.mapName {
+                  float: right;
+                  position: relative;
+                  margin-right: 5px;
+                  bottom: -42px;
+                }
+              }
+            }
+          }
+        }
+
+        .esri-widget.esri-addresslocation-search {
+          background-color: $theme_light_arcgis_widget_bg;
+          display: flex;
+          flex-flow: column nowrap;
+          padding: 2px;
+          max-height: 735px;
+
+          .esri-addresslocation-search-box {
+            background-color: $theme_light_arcgis_widget_bg;
+            color: $theme_light_arcgis_widget_color;
+            display: flex;
+            flex-flow: row;
+            border: 1px;
+
+            .esri-addresslocation-search-box-text {
+              color: $theme_light_arcgis_widget_color;
+              height: 35px;
+              width: 250px;
+              // font-size: 30px;
+            }
+
+            .esri-addresslocation-search-box-button {
+              color: $theme_light_arcgis_widget_color;
+              margin-left: 10px;
+              margin-top: 5px;
+              // width:50px;
+
+              >span {
+                font-size: 20px;
+              }
+            }
+          }
+
+          .esri-addresslocation-search-content {
+            max-height: 700px;
+            overflow-y: auto;
+
+            .locationaddress {
+              display: flex;
+              flex-flow: row;
+              padding: 5px;
+              background-color: $theme_light_arcgis_widget_bg;
+              color: $theme_light_arcgis_widget_color;
+
+              border: 1px;
+
+              .locationaddress-image {
+                width: 30px;
+                height: 60px;
+              }
+
+              .locationaddress-text {
+                width: 250px;
+                height: 60px;
+                display: flex;
+                flex-flow: column;
+
+                .location-poi {
+                  width: 250px;
+                  height: 30px;
+                  // font-size: 21px;
+                }
+
+                .location-qx {
+                  width: 250px;
+                  height: 30px;
+                  //  font-size: 21px;
+                }
+              }
+            }
+
+            .locationaddress.active {
+              background-color: $theme_light_arcgis_active_background;
+            }
+          }
+        }
+
+        .esri-widget.esri-legend {
+          background-color: $theme_light_arcgis_widget_bg;
+          color: $theme_light_arcgis_widget_color;
+          max-height: 900px !important;
+
+          .esri-legend__service-label {
+            color: $theme_light_arcgis_widget_color;
+          }
+
+          ::-webkit-scrollbar {
+            width: 10px !important;
+            height: 1px !important;
+          }
+
+          ::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            -webkit-box-shadow: inset 0 0 10px $theme_light_arcgis_widget_color !important;
+            box-shadow: inset 0 0 10px $theme_light_arcgis_widget_color !important;
+            background: $theme_light_arcgis_widget_bg !important;
+          }
+
+          ::-webkit-scrollbar-track {
+            -webkit-box-shadow: inset 0 0 5px $theme_light_arcgis_widget_color !important;
+            box-shadow: inset 0 0 5px $theme_light_arcgis_widget_color !important;
+            border-radius: 10px !important;
+            background: $theme_light_arcgis_widget_bg !important;
+          }
+        }
+
+        .esri-popup__header {
+          .esri-popup__header-container--button {
+            display: none;
+          }
+
+          .esri-popup__header-buttons {
+            .esri-popup__button.esri-popup__button--dock {
+              display: none;
+            }
+          }
+        }
+
+        .esri-popup .esri-widget,
+        .esri-popup .esri-popup-main,
+        .esri-popup .esri-pointer.esri-pointer-direction,
+        .esri-popup .esri-button,
+        .esri-popup .esri-popup__main-container {
+          background-color: $theme_light_arcgis_widget_bg4;
+          color: $theme_light_arcgis_widget_color;
+
+          .esri-widget__table {
+            color: $theme_light_arcgis_widget_color;
+          }
+
+          .popupbg {
+            background-color: $theme_light_arcgis_widget_bg4;
+          }
+
+          .popupfg {
+            color: $theme_light_arcgis_widget_color;
+          }
+        }
+
+        .esri-popup__inline-actions-container:only-child>.esri-popup__action,
+        .esri-popup__inline-actions-container:only-child>.esri-popup__action-toggle {
+          color: $theme_light_arcgis_widget_color;
+
+          &:hover {
+            background-color: $theme_light_arcgis_widget_bg;
+          }
+        }
+
+        .esri-popup__button {
+          color: $theme_light_arcgis_widget_color;
+
+          &:hover {
+            background-color: $theme_light_arcgis_widget_bg;
+          }
+        }
+
+        .esri-popup__navigation {
+          background-color: $theme_light_arcgis_widget_bg1;
+          color: $theme_light_arcgis_widget_color;
+
+          &:hover {
+            background-color: $theme_light_arcgis_widget_bg;
+          }
+        }
+
+        .esri-widget__table tr td,
+        .esri-widget__table tr th {
+          height: 60px;
+          font-size: 24px;
+        }
+
+        .el-table th,
+        .el-table tr {
+          background-color: transparent;
+          color: $theme_light_arcgis_widget_color;
+        }
+
+        .el-table,
+        .el-table__expanded-cell {
+          background-color: transparent;
+          color: $theme_light_arcgis_widget_color;
+        }
+
+        // Zoom
+        .esri-zoom {
+          .esri-widget--button {
+            &:last-child {
+              border-top: solid 0px $theme_light_arcgis_widget_border;
+            }
+          }
+        }
+
+        .esri-layer-list__item--invisible-at-scale .esri-layer-list__item-title {
+          color: grey !important;
+          font-style: italic !important;
+        }
+      }
+
+      &.calcite-widgets-dark {
+
+        &.layerlistfloatWindow {
+          width: 500px;
+          height: 370px;
+          background: $theme_dark_arcgis_widget_bg6 !important;
+          color: $theme_dark_arcgis_widget_color !important;
+
+          .titlebar {
+            background: linear-gradient($theme_dark_arcgis_widget_bg6,
+                $theme_dark_arcgis_widget_bg1) !important;
+
+            .button {
+              color: $theme_dark_arcgis_widget_color !important;
+            }
+          }
+
+          .content {
+            .el-card {
+              background-color: $theme_dark_arcgis_widget_bg2 !important;
+              color: $theme_dark_arcgis_widget_color;
+              padding: 5px;
+
+              .el-switch__label {
+                color: $theme_dark_arcgis_widget_color;
+
+                &.is-active {
+                  color: $theme_dark_arcgis_widget_color;
+                }
+              }
+            }
+          }
+        }
+        .esri-widget.esri-abovebelowswitch,
+        .esri-widget.esri-areameasurement,
+        .esri-widget.esri-disatancemeasurement,
+        .esri-widget.esri-basemapswitch,
+        .esri-widget.esri-buildingSencelayerFilter,
+        .esri-widget.esri-mapsceneviewswitch,
+        //二三维切换控件，点击按钮实现切换，不等拖拽实现二三维切换
+        .esri-widget.esri-measurementtool,
+        .esri-widget.esri-bmapgallery,
+        .esri-widget.esri-mapsencethemeSettings,
+        .esri-widget.esri-addresslocation-search,
+        .esri-widget.esri-mapsenceswitch,
+        .esri-widget.esri-fullscreen,
+        .esri-widget.esri-direct-line-measurement-3d,
+        .esri-widget.esri-area-measurement-3d,
+        .esri-widget.esri-area-measurement-2d,
+        .esri-widget.esri-distance-measurement-2d,
+        .esri-widget.esri-togglecustomlayerlist,
+        .esri-widget.esri-mapgraphicsclear,
+        .esri-widget.esri-weather,
+        .esri-widget.esri-expand,
+        .esri-widget.esri-layer-list,
+        .esri-widget.esri-home,
+        .esri-widget.esri-zoom,
+        .esri-widget.esri-compass,
+        .esri-widget.esri-locate,
+        .esri-widget.esri-track,
+        .esri-navigation-toggle.esri-widget,
+        // 3d
+        // .esri-popup .esri-widget,
+        .esri-widget .esri-menu,
+        .esri-search.esri-widget,
+        .esri-search .esri-search__input,
+        .esri-navigation-toggle {
+          background-color: $theme_dark_arcgis_widget_bg;
+          color: $theme_dark_arcgis_widget_color;
+
+          .esri-widget--button {
+            background-color: $theme_dark_arcgis_widget_bg;
+            color: $theme_dark_arcgis_widget_color;
+          }
+
+          &.esri-widget--button:not(.esri-search__submit-button):active,
+          &.esri-widget--button:not(.esri-search__submit-button):hover,
+          .esri-widget--button:not(.esri-search__submit-button):active,
+          .esri-widget--button:not(.esri-search__submit-button):hover {
+            background-color: $theme_dark_arcgis_active_background !important;
+            color: $theme_dark_arcgis_active_text_color !important;
+          }
+
+          .esri-widget--button.esri-disabled {
+            color: $theme_dark_arcgis_widget_color;
+          }
+        }
+
+        .esri-widget.esri-areameasurement {
+
+          // border-radius: 50%;
+          &.active {
+            color: red;
+          }
+        }
+
+        .esri-widget.esri-togglecustomlayerlist {
+          &.active {
+            color: red;
+          }
+        }
+
+        .esri-widget.esri-disatancemeasurement {
+
+          // border-radius: 50%;
+          &.active {
+            color: red;
+          }
+        }
+       .esri-widget.esri-weather {
+          &.active {
+            color: red;
+          }
+        }
+
+        //图片样式未使用，使用的是icon 字体样式
+        .esri-widget.esri-basemapswitch {
+          &.esri-basemap-dark {
+            background-image: url(/mapapi/images/dark/mapType_as.jpg);
+          }
+
+          &.esri-basemap-dark {
+            background-image: url(/mapapi/images/dark/mapType_zw.jpg);
+          }
+
+          &.esri-basemap-imagery {
+            background-image: url(/mapapi/images/dark/mapType_img.jpg);
+          }
+        }
+
+        .esri-widget.esri-buildingSencelayerFilter {
+          width: 300px;
+          height: 480px;
+          max-height: 800px;
+          display: flex;
+          flex-flow: column;
+
+          .esri-buildingSencelayerFilter_filterheader {
+            background-color: $theme_dark_arcgis_widget_bg;
+            color: $theme_dark_arcgis_widget_color;
+            margin-top: 10px;
+            text-align: center;
+            height: 0px;
+            font-size: 20px;
+          }
+
+          .esri-buildingSencelayerFilter_slider {
+            background-color: $theme_dark_arcgis_widget_bg;
+            color: $theme_dark_arcgis_widget_color;
+            overflow: auto;
+            height: 320px;
+            max-height: 640px;
+            margin-top: 10px;
+
+            .esri-slider__track {
+              background-color: $theme_dark_arcgis_widget_color;
+            }
+
+            &::-webkit-scrollbar {
+              width: 10px !important;
+              height: 1px !important;
+            }
+
+            &::-webkit-scrollbar-thumb {
+              border-radius: 10px;
+              -webkit-box-shadow: inset 0 0 10px $theme_dark_arcgis_widget_color !important;
+              box-shadow: inset 0 0 10px $theme_dark_arcgis_widget_color !important;
+              background: $theme_dark_arcgis_widget_bg !important;
+            }
+
+            &::-webkit-scrollbar-track {
+              -webkit-box-shadow: inset 0 0 5px $theme_dark_arcgis_widget_color !important;
+              box-shadow: inset 0 0 5px $theme_dark_arcgis_widget_color !important;
+              border-radius: 10px !important;
+              background: $theme_dark_arcgis_widget_bg !important;
+            }
+
+            .esri-slider__tick-label {
+              font-size: 14px;
+            }
+
+            .esri-slider__content {
+              &::-webkit-scrollbar {
+                width: 10px !important;
+                height: 1px !important;
+              }
+
+              &::-webkit-scrollbar-thumb {
+                border-radius: 10px;
+                -webkit-box-shadow: inset 0 0 10px $theme_dark_arcgis_widget_color !important;
+                box-shadow: inset 0 0 10px $theme_dark_arcgis_widget_color !important;
+                background: $theme_dark_arcgis_widget_bg !important;
+              }
+
+              &::-webkit-scrollbar-track {
+                -webkit-box-shadow: inset 0 0 5px $theme_dark_arcgis_widget_color !important;
+                box-shadow: inset 0 0 5px $theme_dark_arcgis_widget_color !important;
+                border-radius: 10px !important;
+                background: $theme_dark_arcgis_widget_bg !important;
+              }
+            }
+          }
+
+          .esri-buildingSencelayerFilter_model {
+            margin-top: 10px;
+            height: 0px;
+            font-size: 20px;
+            text-align: center;
+            background-color: $theme_dark_arcgis_widget_bg;
+            color: $theme_dark_arcgis_widget_color;
+
+            input[type="radio"] {
+              margin-right: 5px;
+            }
+
+            label {
+              margin-right: 10px;
+            }
+          }
+
+          .esri-buildingSencelayerFilter_btn {
+            background-color: $theme_dark_arcgis_widget_bg;
+            color: $theme_dark_arcgis_widget_color;
+            height: 30px;
+            width: 100px;
+            margin-top: 30px;
+            margin-left: 100px;
+          }
+        }
+
+        .esri-widget.esri-measurementtool>div {
+          &.active {
+            background-color: $theme_dark_arcgis_active_background;
+          }
+        }
+
+        .esri-widget.esri-area-measurement-3d {
+          .esri-area-measurement-3d__measurement {
+            background-color: $theme_dark_arcgis_widget_bg;
+            color: $theme_dark_arcgis_widget_color;
+          }
+        }
+
+        .esri-widget.esri-direct-line-measurement-3d {
+          .esri-direct-line-measurement-3d__measurement {
+            background-color: $theme_dark_arcgis_widget_bg;
+            color: $theme_dark_arcgis_widget_color;
+          }
+        }
+
+        .esri-widget.esri-area-measurement-2d {
+          .esri-area-measurement-2d__measurement {
+            background-color: $theme_dark_arcgis_widget_bg;
+            color: $theme_dark_arcgis_widget_color;
+          }
+        }
+
+        .esri-widget.esri-distance-measurement-2d {
+          .esri-distance-measurement-2d__measurement {
+            background-color: $theme_dark_arcgis_widget_bg;
+            color: $theme_dark_arcgis_widget_color;
+          }
+        }
+
+        .esri-widget.esri-expand {
+          .esri-expand__container {
+            .esri-expand__content {
+              ::-webkit-scrollbar {
+                width: 10px !important;
+                height: 1px !important;
+              }
+
+              ::-webkit-scrollbar-thumb {
+                border-radius: 10px;
+                -webkit-box-shadow: inset 0 0 10px $theme_dark_arcgis_widget_color !important;
+                box-shadow: inset 0 0 10px $theme_dark_arcgis_widget_color !important;
+                background: $theme_dark_arcgis_widget_bg !important;
+              }
+
+              ::-webkit-scrollbar-track {
+                -webkit-box-shadow: inset 0 0 5px $theme_dark_arcgis_widget_color !important;
+                box-shadow: inset 0 0 5px $theme_dark_arcgis_widget_color !important;
+                border-radius: 10px !important;
+                background: $theme_dark_arcgis_widget_bg !important;
+              }
+            }
+          }
+        }
+
+        .esri-widget.esri-layer-list {
+          .esri-layer-list__item {
+            background-color: $theme_dark_arcgis_widget_bg;
+            color: $theme_dark_arcgis_widget_color;
+
+            .esri-layer-list__item-container {
+              background-color: $theme_dark_arcgis_widget_bg;
+              color: $theme_dark_arcgis_widget_color;
+
+              .esri-layer-list__child-toggle {
+                color: $theme_dark_arcgis_widget_color;
+              }
+
+              .esri-layer-list__item-label {
+                .esri-layer-list__item-toggle {
+                  color: $theme_dark_arcgis_widget_color;
+                }
+              }
+
+              .esri-layer-list__item-actions-menu {
+                color: $theme_dark_arcgis_widget_color;
+
+                .esri-layer-list__item-actions-menu-item {
+                  color: $theme_dark_arcgis_widget_color;
+                }
+              }
+            }
+
+            .esri-layer-list__item-actions {
+              background-color: $Calcite_Gray_400_Dark;
+              color: $theme_dark_arcgis_widget_color;
+            }
+          }
+        }
+
+        .esri-widget.esri-bmapgallery {
+          width: 914px;
+          height: 100px;
+          display: flex;
+          flex-flow: row;
+          // background-image: url(/mapapi/images/dark/basemap_bg.png);
+          // background-color: transparent !important;
+
+          .esri-bmapgallery-bg {
+            background-color: $theme_dark_arcgis_widget_bg;
+            color: $theme_dark_arcgis_widget_color;
+            margin-left: 15px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            display: flex;
+            flex-flow: row;
+
+            .esri-bmapgallery-image {
+              margin: 10px;
+              width: 80px;
+              height: 60px;
+              color: $theme_dark_arcgis_widget_color;
+              border: 0px;
+              background-image: url(/mapapi/images/dark/i_image.png);
+              background-repeat: round;
+
+              &.active {
+                background-image: url(/mapapi/images/dark/i_image_active.png);
+                background-repeat: round;
+              }
+
+              >span {
+                //  font-size: 10px;
+                color: $theme_dark_arcgis_widget_color;
+
+                &.mapName {
+                  float: right;
+                  position: relative;
+                  bottom: -42px;
+                }
+              }
+            }
+
+            .esri-bmapgallery-street {
+              margin: 10px;
+              width: 80px;
+              height: 60px;
+              color: $theme_dark_arcgis_widget_color;
+              border: 0px;
+              background-image: url(/mapapi/images/dark/i_street.png);
+              background-repeat: round;
+
+              &.active {
+                background-image: url(/mapapi/images/dark/i_street_active.png);
+                background-repeat: round;
+              }
+
+              >span {
+                // font-size: 10px;
+                color: $theme_dark_arcgis_widget_color;
+
+                &.mapName {
+                  float: right;
+                  position: relative;
+                  bottom: -42px;
+                }
+              }
+            }
+
+            .esri-bmapgallery-darkgray {
+              margin: 10px;
+              width: 80px;
+              height: 60px;
+              color: $theme_dark_arcgis_widget_color;
+              border: 0px;
+              background-image: url(/mapapi/images/dark/i_darkgray.png);
+              background-repeat: round;
+
+              &.active {
+                background-image: url(/mapapi/images/dark/i_darkgray_active.png);
+                background-repeat: round;
+              }
+
+              >span {
+                // font-size: 10px;
+                color: $theme_dark_arcgis_widget_color;
+
+                &.mapName {
+                  float: right;
+                  position: relative;
+                  bottom: -42px;
+                }
+              }
+            }
+
+            .esri-bmapgallery-darkgray {
+              margin: 10px;
+              width: 80px;
+              height: 60px;
+              color: $theme_dark_arcgis_widget_color;
+              border: 0px;
+              background-image: url(/mapapi/images/dark/i_darkgray.png);
+              background-repeat: round;
+
+              &.active {
+                background-image: url(/mapapi/images/dark/i_darkgray_active.png);
+                background-repeat: round;
+              }
+
+              >span {
+                // font-size: 10px;
+                color: $theme_dark_arcgis_widget_color;
+
+                &.mapName {
+                  float: right;
+                  position: relative;
+                  bottom: -42px;
+                }
+              }
+            }
+
+            .esri-bmapgallery-shadedrelief {
+              margin: 10px;
+              width: 80px;
+              height: 60px;
+              color: $theme_dark_arcgis_widget_color;
+              border: 0px;
+              background-image: url(/mapapi/images/dark/i_shadedrelief.png);
+              background-repeat: round;
+
+              &.active {
+                background-image: url(/mapapi/images/dark/i_shadedrelief_active.png);
+                background-repeat: round;
+              }
+
+              >span {
+                // font-size: 10px;
+                color: $theme_dark_arcgis_widget_color;
+
+                &.mapName {
+                  float: right;
+                  position: relative;
+                  bottom: -42px;
+                }
+              }
+            }
+
+            .esri-bmapgallery-natgeo {
+              margin: 10px;
+              width: 80px;
+              height: 60px;
+              color: $theme_dark_arcgis_widget_color;
+              border: 0px;
+              background-image: url(/mapapi/images/dark/i_natgeo.png);
+              background-repeat: round;
+
+              &.active {
+                background-image: url(/mapapi/images/dark/i_natgeo_active.png);
+                background-repeat: round;
+              }
+
+              >span {
+                // font-size: 10px;
+                color: $theme_dark_arcgis_widget_color;
+
+                &.mapName {
+                  float: right;
+                  position: relative;
+                  bottom: -42px;
+                }
+              }
+            }
+
+            .esri-bmapgallery-physical {
+              margin: 10px;
+              width: 80px;
+              height: 60px;
+              color: $theme_dark_arcgis_widget_color;
+              border: 0px;
+              background-image: url(/mapapi/images/dark/i_physical.png);
+              background-repeat: round;
+
+              &.active {
+                background-image: url(/mapapi/images/dark/i_physical_active.png);
+                background-repeat: round;
+              }
+
+              >span {
+                // font-size: 10px;
+                color: $theme_dark_arcgis_widget_color;
+
+                &.mapName {
+                  float: right;
+                  position: relative;
+                  bottom: -42px;
+                }
+              }
+            }
+
+            .esri-bmapgallery-topmap {
+              margin: 10px;
+              width: 80px;
+              height: 60px;
+              color: $theme_dark_arcgis_widget_color;
+              border: 0px;
+              background-image: url(/mapapi/images/dark/i_topmap.png);
+              background-repeat: round;
+
+              &.active {
+                background-image: url(/mapapi/images/dark/i_topmap_active.png);
+                background-repeat: round;
+              }
+
+              >span {
+                // font-size: 10px;
+                color: $theme_dark_arcgis_widget_color;
+
+                &.mapName {
+                  float: right;
+                  position: relative;
+                  bottom: -42px;
+                }
+              }
+            }
+
+            .esri-bmapgallery-switch-underground {
+              position: absolute;
+              bottom: 15px;
+              right: 10px;
+              display: flex;
+              flex-flow: row;
+
+              &.invisible {
+                display: none;
+              }
+
+              .esri-bmapgallery-switch-underground-checkbox {
+                float: left;
+                position: relative;
+                font-size: 100px;
+                width: 42px;
+                height: 20px;
+                border-radius: 30px;
+                border: none;
+                outline: none;
+                -webkit-appearance: none;
+                transition: all 0.2s ease;
+                border: 0.2px #296098 solid;
+                background-color: $Calcite_Gray_300;
+              }
+
+              .esri-bmapgallery-switch-underground-checkbox::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 50%;
+                height: 100%;
+                border-radius: 50%;
+                transition: all 0.2s ease;
+                background-color: $Calcite_Gray_100;
+              }
+
+              .esri-bmapgallery-switch-underground-checkbox:checked::after {
+                left: 50%;
+              }
+
+              .esri-bmapgallery-switch-underground-checkbox:checked {
+                background-color: $Calcite_Gray_300;
+                border: 0.2px $Calcite_Gray_200 solid;
+              }
+
+              .esri-bmapgallery-switch-underground-h4 {
+                color: $Calcite_Gray_700;
+                margin-top: 6px;
+                margin-left: 5px;
+                margin-right: 5px;
+              }
+            }
+
+            .active {
+              box-shadow: 1px 0px 10px $Calcite_Gray_300 inset;
+              border: 0.1px $Calcite_Gray_200 solid;
+            }
+          }
+        }
+
+        .esri-widget.esri-bookmark-gallery {
+          background-color: $theme_dark_arcgis_widget_bg;
+          display: flex;
+          flex-flow: row nowrap;
+
+          .esri-bookmark-gallery-bg {
+            &.hide{
+              display: none;
+            }
+            margin-left: 15px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            background-color: $theme_dark_arcgis_widget_bg1;
+            color: $theme_dark_arcgis_widget_color;
+            display: flex;
+            flex-flow: row;
+
+            .esri-bookmark-item {
+              margin: 10px;
+              width: 80px;
+              height: 80px;
+              color: $theme_dark_arcgis_widget_color;
+              border: 0px;
+
+              .esri-bookmark-item-rect {
+                border: solid 1px $theme_dark_arcgis_widget_color;
+
+                &.hightlight {
+                  border: solid 2px red;
+                }
+
+                .bookmarkimage {
+                  height: auto;
+                  max-width: 100%;
+                  max-height: 100%;
+                  vertical-align: bottom;
+                  bottom: 0;
+                  -o-object-fit: fill;
+                  object-fit: fill;
+                }
+
+                >span {
+                  color: $theme_dark_arcgis_widget_color;
+
+                  &.mapName {
+                    float: right;
+                    position: relative;
+                    margin-right: 5px;
+                    bottom: 20px;
+                  }
+                }
+              }
+
+            }
+          }
+        }
+
+        .esri-widget.esri-bmapgallery-expand {
+          // width: 494px;
+          // height: 100px;
+          // background-image: url(/mapapi/images/dark/basemap_bg.png);
+          // background-color: transparent !important;
+          //  -moz-background-size: 100% 100%;
+          //  background-size: 100% 100%;
+          // border: solid 10px red;
+          background-color: $theme_dark_arcgis_widget_bg;
+          display: flex;
+          flex-flow: row nowrap;
+
+          .esri-bmapgallery-expand-bg {
+            display: none;
+            margin-left: 15px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            background-color: $theme_dark_arcgis_widget_bg1;
+            color: $theme_dark_arcgis_widget_color;
+            display: flex;
+            flex-flow: row;
+
+            &.invisible {
+              display: none;
+            }
+
+            .esri-bmapgallery-expand-image {
+              margin: 10px;
+              width: 80px;
+              height: 60px;
+              color: $theme_dark_arcgis_widget_color;
+              border: 0px;
+              background-image: url(/mapapi/images/dark/i_image.png);
+              background-repeat: round;
+
+              &.active {
+                background-image: url(/mapapi/images/dark/i_image_active.png);
+                background-repeat: round;
+              }
+
+              >span {
+                // font-size: 10px;
+                color: $theme_dark_arcgis_widget_color;
+
+                &.mapName {
+                  float: right;
+                  position: relative;
+                  margin-right: 5px;
+                  bottom: -42px;
+                }
+              }
+            }
+
+            .esri-bmapgallery-expand-street {
+              margin: 10px;
+              width: 80px;
+              height: 60px;
+              color: $theme_dark_arcgis_widget_color;
+              border: 0px;
+              background-image: url(/mapapi/images/dark/i_street.png);
+              background-repeat: round;
+
+              &.active {
+                background-image: url(/mapapi/images/dark/i_street_active.png);
+                background-repeat: round;
+              }
+
+              >span {
+                //  font-size: 10px;
+                color: $theme_dark_arcgis_widget_color;
+
+                &.mapName {
+                  float: right;
+                  position: relative;
+                  margin-right: 5px;
+                  bottom: -42px;
+                }
+              }
+            }
+
+            .esri-bmapgallery-expand-darkgray {
+              margin: 10px;
+              width: 80px;
+              height: 60px;
+              color: $theme_dark_arcgis_widget_color;
+              border: 0px;
+              background-image: url(/mapapi/images/dark/i_darkgray.png);
+              background-repeat: round;
+
+              &.active {
+                background-image: url(/mapapi/images/dark/i_darkgray_active.png);
+                background-repeat: round;
+              }
+
+              >span {
+                // font-size: 10px;
+                color: $theme_dark_arcgis_widget_color;
+
+                &.mapName {
+                  float: right;
+                  position: relative;
+                  margin-right: 5px;
+                  bottom: -42px;
+                }
+              }
+            }
+
+            .esri-bmapgallery-expand-darkgray {
+              margin: 10px;
+              width: 80px;
+              height: 60px;
+              color: $theme_dark_arcgis_widget_color;
+              border: 0px;
+              background-image: url(/mapapi/images/dark/i_darkgray.png);
+              background-repeat: round;
+
+              &.active {
+                background-image: url(/mapapi/images/dark/i_darkgray_active.png);
+                background-repeat: round;
+              }
+
+              >span {
+                // font-size: 10px;
+                color: $theme_dark_arcgis_widget_color;
+
+                &.mapName {
+                  float: right;
+                  position: relative;
+                  margin-right: 5px;
+                  bottom: -42px;
+                }
+              }
+            }
+
+            .esri-bmapgallery-expand-natgeo {
+              margin: 10px;
+              width: 80px;
+              height: 60px;
+              color: $theme_dark_arcgis_widget_color;
+              border: 0px;
+              background-image: url(/mapapi/images/dark/i_natgeo.png);
+              background-repeat: round;
+
+              &.active {
+                background-image: url(/mapapi/images/dark/i_natgeo_active.png);
+                background-repeat: round;
+              }
+
+              >span {
+                // font-size: 10px;
+                color: $theme_dark_arcgis_widget_color;
+
+                &.mapName {
+                  float: right;
+                  position: relative;
+                  margin-right: 5px;
+                  bottom: -42px;
+                }
+              }
+            }
+
+            .esri-bmapgallery-expand-physical {
+              margin: 10px;
+              width: 80px;
+              height: 60px;
+              color: $theme_dark_arcgis_widget_color;
+              border: 0px;
+              background-image: url(/mapapi/images/dark/i_physical.png);
+              background-repeat: round;
+
+              &.active {
+                background-image: url(/mapapi/images/dark/i_physical_active.png);
+                background-repeat: round;
+              }
+
+              >span {
+                // font-size: 10px;
+                color: $theme_dark_arcgis_widget_color;
+
+                &.mapName {
+                  float: right;
+                  position: relative;
+                  margin-right: 5px;
+                  bottom: -42px;
+                }
+              }
+            }
+
+            .esri-bmapgallery-expand-topmap {
+              margin: 10px;
+              width: 80px;
+              height: 60px;
+              color: $theme_dark_arcgis_widget_color;
+              border: 0px;
+              background-image: url(/mapapi/images/dark/i_topmap.png);
+              background-repeat: round;
+
+              &.active {
+                background-image: url(/mapapi/images/dark/i_topmap_active.png);
+                background-repeat: round;
+              }
+
+              >span {
+                // font-size: 10px;
+                color: $theme_dark_arcgis_widget_color;
+
+                &.mapName {
+                  float: right;
+                  position: relative;
+                  margin-right: 5px;
+                  bottom: -42px;
+                }
+              }
+            }
+
+            .esri-bmapgallery-expand-shadedrelief {
+              margin: 10px;
+              width: 80px;
+              height: 60px;
+              color: $theme_dark_arcgis_widget_color;
+              border: 0px;
+              background-image: url(/mapapi/images/dark/i_shadedrelief.png);
+              background-repeat: round;
+
+              &.active {
+                background-image: url(/mapapi/images/dark/i_shadedrelief_active.png);
+                background-repeat: round;
+              }
+
+              >span {
+                // font-size: 10px;
+                color: $theme_dark_arcgis_widget_color;
+
+                &.mapName {
+                  float: right;
+                  position: relative;
+                  margin-right: 5px;
+                  bottom: -42px;
+                }
+              }
+            }
+
+            .esri-bmapgallery-expand-switch-underground {
+              // position: absolute;
+              bottom: 15px;
+              right: 10px;
+              display: flex;
+              flex-flow: row;
+
+              &.invisible {
+                display: none;
+              }
+
+              .esri-bmapgallery-expand-switch-underground-checkbox {
+                float: left;
+                position: relative;
+                font-size: 100px;
+                width: 32px;
+                margin-top: 25px;
+                height: 20px;
+                border-radius: 30px;
+                border: none;
+                outline: none;
+                -webkit-appearance: none;
+                transition: all 0.2s ease;
+                border: 0.2px #296098 solid;
+                background-color: $Calcite_Gray_300;
+              }
+
+              .esri-bmapgallery-expand-switch-underground-checkbox::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 50%;
+                height: 100%;
+                border-radius: 50%;
+                transition: all 0.2s ease;
+                background-color: $Calcite_Gray_100;
+              }
+
+              .esri-bmapgallery-expand-switch-underground-checkbox:checked::after {
+                left: 50%;
+              }
+
+              .esri-bmapgallery-expand-switch-underground-checkbox:checked {
+                background-color: $Calcite_Gray_300;
+                border: 0.2px $Calcite_Gray_200 solid;
+              }
+
+              .esri-bmapgallery-expand-switch-underground-h4 {
+                color: $Calcite_Gray_700;
+              }
+
+              .esri-bmapgallery-expand-switch-underground-h4 {
+                margin-top: 25px;
+                margin-left: 5px;
+                margin-right: 5px;
+              }
+            }
+
+            .active {
+              box-shadow: 1px 0px 10px $Calcite_Gray_300 inset;
+              border: 0.1px $Calcite_Gray_200 solid;
+            }
+          }
+
+          .esri-bmapgallery-expand-display {
+            &.esri-bmapgallery-expand-boundary {
+              margin: 20px;
+              width: 80px;
+              height: 60px;
+              color: $theme_dark_arcgis_widget_color;
+              border: 0px;
+              background-image: url(/mapapi/images/dark/i_boundary.png);
+              background-repeat: round;
+
+              &.active {
+                background-image: url(/mapapi/images/dark/i_boundary_active.png);
+                background-repeat: round;
+              }
+
+              >span {
+                // font-size: 10px;
+                color: $theme_dark_arcgis_widget_color;
+
+                &.mapName {
+                  float: right;
+                  position: relative;
+                  margin-right: 5px;
+                  bottom: -42px;
+                }
+              }
+            }
+
+            &.esri-bmapgallery-expand-image {
+              margin: 20px;
+              width: 80px;
+              height: 60px;
+              color: $theme_dark_arcgis_widget_color;
+              border: 0px;
+              background-image: url(/mapapi/images/dark/i_image.png);
+              background-repeat: round;
+
+              &.active {
+                background-image: url(/mapapi/images/dark/i_image_active.png);
+                background-repeat: round;
+              }
+
+              >span {
+                // font-size: 10px;
+                color: $theme_dark_arcgis_widget_color;
+
+                &.mapName {
+                  float: right;
+                  position: relative;
+                  margin-right: 5px;
+                  bottom: -42px;
+                }
+              }
+            }
+
+            &.esri-bmapgallery-expand-street {
+              margin: 20px;
+              width: 80px;
+              height: 60px;
+              color: $theme_dark_arcgis_widget_color;
+              border: 0px;
+              background-image: url(/mapapi/images/dark/i_street.png);
+              background-repeat: round;
+
+              &.active {
+                background-image: url(/mapapi/images/dark/i_street_active.png);
+                background-repeat: round;
+              }
+
+              >span {
+                //  font-size: 10px;
+                color: $theme_dark_arcgis_widget_color;
+
+                &.mapName {
+                  float: right;
+                  position: relative;
+                  margin-right: 5px;
+                  bottom: -42px;
+                }
+              }
+            }
+
+            &.esri-bmapgallery-expand-darkgray {
+              margin: 20px;
+              width: 80px;
+              height: 60px;
+              color: $theme_dark_arcgis_widget_color;
+              border: 0px;
+              background-image: url(/mapapi/images/dark/i_darkgray.png);
+              background-repeat: round;
+
+              &.active {
+                background-image: url(/mapapi/images/dark/i_darkgray_active.png);
+                background-repeat: round;
+              }
+
+              >span {
+                // font-size: 10px;
+                color: $theme_dark_arcgis_widget_color;
+
+                &.mapName {
+                  float: right;
+                  position: relative;
+                  margin-right: 5px;
+                  bottom: -42px;
+                }
+              }
+            }
+
+            &.esri-bmapgallery-expand-shadedrelief {
+              margin: 20px;
+              width: 80px;
+              height: 60px;
+              color: $theme_dark_arcgis_widget_color;
+              border: 0px;
+              background-image: url(/mapapi/images/dark/i_shadedrelief.png);
+              background-repeat: round;
+
+              &.active {
+                background-image: url(/mapapi/images/dark/i_shadedrelief_active.png);
+                background-repeat: round;
+              }
+
+              >span {
+                // font-size: 10px;
+                color: $theme_dark_arcgis_widget_color;
+
+                &.mapName {
+                  float: right;
+                  position: relative;
+                  margin-right: 5px;
+                  bottom: -42px;
+                }
+              }
+            }
+
+            &.esri-bmapgallery-expand-darkgray {
+              margin: 20px;
+              width: 80px;
+              height: 60px;
+              color: $theme_dark_arcgis_widget_color;
+              border: 0px;
+              background-image: url(/mapapi/images/dark/i_darkgray.png);
+              background-repeat: round;
+
+              &.active {
+                background-image: url(/mapapi/images/dark/i_darkgray_active.png);
+                background-repeat: round;
+              }
+
+              >span {
+                // font-size: 10px;
+                color: $theme_dark_arcgis_widget_color;
+
+                &.mapName {
+                  float: right;
+                  position: relative;
+                  margin-right: 5px;
+                  bottom: -42px;
+                }
+              }
+            }
+
+            &.esri-bmapgallery-expand-natgeo {
+              margin: 20px;
+              width: 80px;
+              height: 60px;
+              color: $theme_dark_arcgis_widget_color;
+              border: 0px;
+              background-image: url(/mapapi/images/dark/i_natgeo.png);
+              background-repeat: round;
+
+              &.active {
+                background-image: url(/mapapi/images/dark/i_natgeo_active.png);
+                background-repeat: round;
+              }
+
+              >span {
+                // font-size: 10px;
+                color: $theme_dark_arcgis_widget_color;
+
+                &.mapName {
+                  float: right;
+                  position: relative;
+                  margin-right: 5px;
+                  bottom: -42px;
+                }
+              }
+            }
+
+            &.esri-bmapgallery-expand-physical {
+              margin: 20px;
+              width: 80px;
+              height: 60px;
+              color: $theme_dark_arcgis_widget_color;
+              border: 0px;
+              background-image: url(/mapapi/images/dark/i_physical.png);
+              background-repeat: round;
+
+              &.active {
+                background-image: url(/mapapi/images/dark/i_physical_active.png);
+                background-repeat: round;
+              }
+
+              >span {
+                // font-size: 10px;
+                color: $theme_dark_arcgis_widget_color;
+
+                &.mapName {
+                  float: right;
+                  position: relative;
+                  margin-right: 5px;
+                  bottom: -42px;
+                }
+              }
+            }
+
+            &.esri-bmapgallery-expand-topmap {
+              margin: 20px;
+              width: 80px;
+              height: 60px;
+              color: $theme_dark_arcgis_widget_color;
+              border: 0px;
+              background-image: url(/mapapi/images/dark/i_topmap.png);
+              background-repeat: round;
+
+              &.active {
+                background-image: url(/mapapi/images/dark/i_topmap_active.png);
+                background-repeat: round;
+              }
+
+              >span {
+                // font-size: 10px;
+                color: $theme_dark_arcgis_widget_color;
+
+                &.mapName {
+                  float: right;
+                  position: relative;
+                  margin-right: 5px;
+                  bottom: -42px;
+                }
+              }
+            }
+          }
+        }
+
+        .esri-widget.esri-addresslocation-search {
+          background-color: $theme_dark_arcgis_widget_bg;
+          display: flex;
+          flex-flow: column nowrap;
+          padding: 2px;
+          max-height: 735px;
+
+          .esri-addresslocation-search-box {
+            background-color: $theme_dark_arcgis_widget_bg;
+            color: $theme_dark_arcgis_widget_color;
+            display: flex;
+            flex-flow: row;
+            border: 1px;
+
+            .esri-addresslocation-search-box-text {
+              color: $theme_dark_arcgis_widget_color;
+              height: 35px;
+              width: 250px;
+              // font-size: 30px;
+            }
+
+            .esri-addresslocation-search-box-button {
+              color: $theme_dark_arcgis_widget_color;
+              margin-left: 10px;
+              margin-top: 5px;
+              // width:50px;
+
+              >span {
+                font-size: 20px;
+              }
+            }
+          }
+
+          .esri-addresslocation-search-content {
+            max-height: 700px;
+            overflow-y: auto;
+
+            .locationaddress {
+              display: flex;
+              flex-flow: row;
+              padding: 5px;
+              background-color: $theme_dark_arcgis_widget_bg;
+              color: $theme_dark_arcgis_widget_color;
+
+              border: 1px;
+
+              .locationaddress-image {
+                width: 30px;
+                height: 60px;
+              }
+
+              .locationaddress-text {
+                width: 250px;
+                height: 60px;
+                display: flex;
+                flex-flow: column;
+
+                .location-poi {
+                  width: 250px;
+                  height: 30px;
+                  // font-size: 21px;
+                }
+
+                .location-qx {
+                  width: 250px;
+                  height: 30px;
+                  //  font-size: 21px;
+                }
+              }
+            }
+
+            .locationaddress.active {
+              background-color: $theme_dark_arcgis_active_background;
+            }
+          }
+        }
+
+        .esri-widget.esri-legend {
+          background-color: $theme_dark_arcgis_widget_bg;
+          color: $theme_dark_arcgis_widget_color;
+          max-height: 900px !important;
+
+          .esri-legend__service-label {
+            color: $theme_dark_arcgis_widget_color;
+          }
+
+          ::-webkit-scrollbar {
+            width: 10px !important;
+            height: 1px !important;
+          }
+
+          ::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            -webkit-box-shadow: inset 0 0 10px $theme_dark_arcgis_widget_color !important;
+            box-shadow: inset 0 0 10px $theme_dark_arcgis_widget_color !important;
+            background: $theme_dark_arcgis_widget_bg !important;
+          }
+
+          ::-webkit-scrollbar-track {
+            -webkit-box-shadow: inset 0 0 5px $theme_dark_arcgis_widget_color !important;
+            box-shadow: inset 0 0 5px $theme_dark_arcgis_widget_color !important;
+            border-radius: 10px !important;
+            background: $theme_dark_arcgis_widget_bg !important;
+          }
+        }
+
+        .esri-popup__header {
+          .esri-popup__header-container--button {
+            display: none;
+          }
+
+          .esri-popup__header-buttons {
+            .esri-popup__button.esri-popup__button--dock {
+              display: none;
+            }
+          }
+        }
+
+        .esri-popup .esri-widget,
+        .esri-popup .esri-popup-main,
+        .esri-popup .esri-pointer.esri-pointer-direction,
+        .esri-popup .esri-button,
+        .esri-popup .esri-popup__main-container {
+          background-color: $theme_dark_arcgis_widget_bg4;
+          color: $theme_dark_arcgis_widget_color;
+
+          .esri-widget__table {
+            color: $theme_dark_arcgis_widget_color;
+          }
+
+          .popupbg {
+            background-color: $theme_dark_arcgis_widget_bg4;
+          }
+
+          .popupfg {
+            color: $theme_dark_arcgis_widget_color;
+          }
+        }
+
+        .esri-popup__inline-actions-container:only-child>.esri-popup__action,
+        .esri-popup__inline-actions-container:only-child>.esri-popup__action-toggle {
+          color: $theme_dark_arcgis_widget_color;
+
+          &:hover {
+            background-color: $theme_dark_arcgis_widget_bg;
+          }
+        }
+
+        .esri-popup__button {
+          color: $theme_dark_arcgis_widget_color;
+
+          &:hover {
+            background-color: $theme_dark_arcgis_widget_bg;
+          }
+        }
+
+        .esri-popup__navigation {
+          background-color: $theme_dark_arcgis_widget_bg1;
+          color: $theme_dark_arcgis_widget_color;
+
+          &:hover {
+            background-color: $theme_dark_arcgis_widget_bg;
+          }
+        }
+
+        .esri-widget__table tr td,
+        .esri-widget__table tr th {
+          height: 60px;
+          font-size: 24px;
+        }
+
+        .el-table th,
+        .el-table tr {
+          background-color: transparent;
+          color: $theme_dark_arcgis_widget_color;
+        }
+
+        .el-table,
+        .el-table__expanded-cell {
+          background-color: transparent;
+          color: $theme_dark_arcgis_widget_color;
+        }
+
+        // Zoom
+        .esri-zoom {
+          .esri-widget--button {
+            &:last-child {
+              border-top: solid 0px $theme_dark_arcgis_widget_border;
+            }
+          }
+        }
+
+        .esri-layer-list__item--invisible-at-scale .esri-layer-list__item-title {
+          color: grey !important;
+          font-style: italic !important;
+        }
+      }
+    }
+  }
+}

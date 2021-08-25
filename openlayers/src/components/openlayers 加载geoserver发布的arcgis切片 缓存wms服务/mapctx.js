@@ -3,7 +3,7 @@ import 'ol/ol.css'
 import store from '@/store/index'
 import * as olProj from 'ol/proj'
 import TileGrid from 'ol/tilegrid/TileGrid'
-import Map from 'ol/Map';
+import Map from 'ol/Map'
 import TileLayer from 'ol/layer/Tile'
 import TileWMS from 'ol/source/TileWMS'
 import View from 'ol/View'
